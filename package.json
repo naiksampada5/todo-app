@@ -2,10 +2,12 @@
   "name": "sampada",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://naiksampada5.github.io/todo-app",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-solid-svg-icons": "^5.13.1",
     "@fortawesome/react-fontawesome": "^0.1.11",
+    "gh-pages": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "0.9.5"
@@ -15,6 +17,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "yarn cleanCache && gh-pages -b master -d build",
+    "cleanCache": "rm -rf node_modules/gh-pages/.cache"
   }
 }
